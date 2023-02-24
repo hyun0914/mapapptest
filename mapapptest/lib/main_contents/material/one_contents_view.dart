@@ -22,7 +22,6 @@ class _OneContentsViewState extends State<OneContentsView> {
           height: 160,
           color: Colors.black12,
         ),
-
         Row(
           children: [
             Container(
@@ -64,31 +63,35 @@ class _OneContentsViewState extends State<OneContentsView> {
             ),
           ],
         ),
-
-        Container(
-          width: MediaQuery.of(context).size.width,
-          //height: MediaQuery.of(context).size.height > 930? MediaQuery.of(context).size.height/2.2 : MediaQuery.of(context).size.height/2.5,
-          color: MAIN_CONTENTS_COLOR,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('도착지를 검색 후 노선을 생성하여', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
-              Text('같이 가실분을 찾아보세요', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
-              SizedBox(height: 14,),
-              Text('노선현황에서는 다른분이 생성하신', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
-              Text('노선을 확인 하실 수 있습니다.', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
-            ],
+        Expanded(
+          flex: 100,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            color: MAIN_CONTENTS_COLOR,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('도착지를 검색 후 노선을 생성하여', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
+                Text('같이 가실분을 찾아보세요', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
+                SizedBox(height: 14,),
+                Text('노선현황에서는 다른분이 생성하신', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
+                Text('노선을 확인 하실 수 있습니다.', style: TextStyle(fontSize: 16, color: MAIN_TEXT_COLOR)),
+              ],
+            ),
           ),
         ),
         Spacer(),
-        Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height > 930? 64 : 60,
-            decoration: BoxDecoration(border: Border(top: BorderSide(color: MAIN_BUTTON_LINE_COlOR, width: 1))),
-            child: ElevatedButton(
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ElevatedButton(
                 onPressed: null,
-                child: Text('노선 생성하기', style: TextStyle(fontSize: 20),),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  child: Text('노선 생성하기', style: TextStyle(fontSize: 20),),
+                ),
             ),
+          ],
         ),
       ],
     );

@@ -14,6 +14,7 @@ class Body extends StatelessWidget {
           children: [
             SimpleAppBar(title: '문의하기'),
             InquiryDetailsForm(),
+            Spacer(),
             InquiryDetailsButton(),
           ],
         )

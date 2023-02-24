@@ -20,13 +20,17 @@ class CardButtonForm extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20,),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('- 목적지 도착 시 보유 포인트가 없을 경우, 등록된 카드로 결제됩니다', style: TextStyle(color: CONTENTS_TEXT_G_COLOR),),
-            SizedBox(height: 4,),
-            Text('- 개인카드 및 법인카드 등록가능', style: TextStyle(color: CONTENTS_TEXT_G_COLOR),),
-          ],
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.only(left: 10, right: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('- 목적지 도착 시 보유 포인트가 없을 경우, \n  등록된 카드로 결제됩니다', style: TextStyle(color: CONTENTS_TEXT_G_COLOR),),
+              SizedBox(height: 4,),
+              Text('- 개인카드 및 법인카드 등록가능', style: TextStyle(color: CONTENTS_TEXT_G_COLOR),),
+            ],
+          ),
         ),
       ],
     );
