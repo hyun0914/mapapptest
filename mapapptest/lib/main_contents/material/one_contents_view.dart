@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:remedi_kopo/remedi_kopo.dart';
 
 import '../../const/colors.dart';
 
@@ -54,6 +56,12 @@ class _OneContentsViewState extends State<OneContentsView> {
               width: 330,
               height: 60,
               child: TextField(
+                onTap: () async {
+                  KopoModel? kmodle = await Navigator.of(context).push(CupertinoPageRoute(builder: (context) => RemediKopo()));
+
+                  print('${kmodle!.zonecode} / ${kmodle.address} / ${kmodle.buildingName}'); // zonecode 우편 번호 , address 주소
+
+                },
                 style: TextStyle(fontSize: 18),
                 decoration: InputDecoration(
                     border: InputBorder.none,
